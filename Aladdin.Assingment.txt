@@ -1,0 +1,15 @@
+def optimalPoint(magic,dist):
+    n=len(magic)
+    start=0
+    total_magic=0
+    curr_magic=0
+    for i in range(n):
+        total_magic+=magic[i]-dist[i]
+        curr_magic+=magic[i]-dist[i]
+        if curr_magic<0:
+           start=i+1
+           curr_magic=0
+        if total_magic<0:
+            return-1
+        else:
+           return start
